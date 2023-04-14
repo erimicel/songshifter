@@ -27,12 +27,13 @@ module Shifter
       end
 
       def export
+        puts "Downloading image for #{name}..."
+        puts "Exporting tracks for #{name}..."
+
         init_progressbar
 
-        puts "Downloading image for #{name}..."
         self.download_image
 
-        puts "Exporting tracks for #{name}..."
         Shifter::Exporter.new(data: serialize_tracks, file_name: "#{PREFIX}#{name}").export
       end
 

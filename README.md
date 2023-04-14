@@ -7,6 +7,12 @@
 * Set ENV variables in `.env` file, demo variables can be found under `sample.env` file.
 * Run application with `ruby app/shifter.rb` or just run code in VSCode on shifter.rb file.
 
+## Example output
+
+Downloading image for =>...
+Exporting tracks for =>...
+Progress: |====================================================================|
+
 # Auth Accounts
 ## Spotify API
 
