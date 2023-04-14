@@ -3,4 +3,4 @@
 !.env.example
 .DS_Store
 output.csv
-/tmp
+/tmp/*
