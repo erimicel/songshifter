@@ -1,6 +1,4 @@
 
-require 'down'
-
 module Shifter
   module Spotify
     class Playlist
@@ -28,20 +26,34 @@ module Shifter
         @playlist.images.first['url']
       end
 
-      def download_image
-        Down.download(image, destination: "tmp/#{PREFIX}#{@playlist.name}.png")
-      end
-
       def export
+        init_progressbar
+
+        puts "Downloading image for #{name}..."
         self.download_image
-        Shifter::Exporter.new(data: serialize_tracks, file_name: "#{PREFIX}#{@playlist.name}").export
+
+        puts "Exporting tracks for #{name}..."
+        Shifter::Exporter.new(data: serialize_tracks, file_name: "#{PREFIX}#{name}").export
       end
 
       private
 
+      # total: tracks.count + 1 because we also download the image
+      def init_progressbar
+        @progressbar = ProgressBar.create(total: tracks.count + 1)
+      end
+
+      def download_image
+        Down.download(image, destination: "tmp/#{PREFIX}#{name}.png")
+
+        @progressbar.increment
+      end
+
       def serialize_tracks
-        tracks.map do |track|
-          {
+        arr = []
+
+        tracks.each do |track|
+          arr << {
             name: track.name,
             artists: track.artists.map(&:name).join(', '),
             album: track.album.name,
@@ -51,7 +63,11 @@ module Shifter
             preview_url: track.preview_url,
             uri: track.uri
           }
+
+          @progressbar.increment
         end
+
+        arr
       end
     end
   end

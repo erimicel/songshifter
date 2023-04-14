@@ -2,11 +2,13 @@ require_relative '../config/initailizers/dotenv'
 require_relative 'shifter/exporter'
 require_relative 'shifter/scraper'
 require_relative 'shifter/parser'
+require_relative 'shifter/downloader'
 require_relative 'shifter/version'
 require_relative 'shifter/channels'
 
 require 'debug'
 require 'rspotify'
+require 'ruby-progressbar'
 
 # SongShifter base module
 module Shifter

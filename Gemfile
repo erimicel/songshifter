@@ -14,6 +14,9 @@ gem 'down', '~> 5.0'
 # This library provides debugging functionality to Ruby (MRI) 2.6 and later.
 gem 'debug', '>= 1.0.0'
 
+# Progress bar
+gem 'ruby-progressbar'
+
 # Spotify ruby gem
 # https://github.com/guilhermesad/rspotify
 gem 'rspotify'
