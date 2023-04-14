@@ -24,3 +24,6 @@ gem 'rspotify'
 # Apple music ruby gem
 # https://github.com/yhirano55/apple_music
 gem 'apple_music'
+
+# Test gem
+gem 'rspec'
