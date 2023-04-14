@@ -27,8 +27,8 @@ module Shifter
       end
 
       def export
-        puts "Downloading image for #{name}..."
-        puts "Exporting tracks for #{name}..."
+        puts "Downloading image for '#{name}'"
+        puts "Exporting tracks for '#{name}"
 
         init_progressbar
 
@@ -58,11 +58,11 @@ module Shifter
             name: track.name,
             artists: track.artists.map(&:name).join(', '),
             album: track.album.name,
-            duration: track.duration_ms,
-            explicit: track.explicit,
-            popularity: track.popularity,
-            preview_url: track.preview_url,
-            uri: track.uri
+            # duration: track.duration_ms,
+            # explicit: track.explicit,
+            # popularity: track.popularity,
+            # preview_url: track.preview_url,
+            # uri: track.uri
           }
 
           @progressbar.increment

@@ -9,8 +9,11 @@
 
 ## Example output
 
-Downloading image for =>...
-Exporting tracks for =>...
+Authenticating with Spotify...
+Exporting playlist for '=>', New List
+Downloading image for '=>'
+Exporting tracks for '=>
+
 Progress: |====================================================================|
 
 # Auth Accounts

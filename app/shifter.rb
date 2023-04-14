@@ -28,10 +28,13 @@ module Shifter
 end
 
 # authenticate for user erimicel via API
+puts 'Authenticating with Spotify...'
 spotify = Shifter::Spotify.new(user: 'erimicel')
 
 # Export playlist to CSV and download thumbnail image
-spotify.playlist(id: '6vlWxLitVim5pvBzI7oZp6').export
+playlist = spotify.playlist(id: '6vlWxLitVim5pvBzI7oZp6')
+puts "Exporting playlist for '#{playlist.name}', #{playlist.description}"
+playlist.export
 
 # TODO: add examples
 # TODO: add user prompt for playlist ID or action
