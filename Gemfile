@@ -15,7 +15,9 @@ gem 'down', '~> 5.0'
 gem 'debug', '>= 1.0.0'
 
 # Spotify ruby gem
+# https://github.com/guilhermesad/rspotify
 gem 'rspotify'
 
 # Apple music ruby gem
+# https://github.com/yhirano55/apple_music
 gem 'apple_music'

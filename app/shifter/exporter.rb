@@ -1,7 +1,7 @@
 require 'csv'
 
 module Shifter
-  #This code is designed to provide a simple interface for exporting data to a CSV file.
+  # This code is designed to provide a simple interface for exporting data to a CSV file.
   # The CSV library is used to write the data to a CSV file with the given file name.
   class Exporter
     def initialize(data: {}, file_name: 'output')

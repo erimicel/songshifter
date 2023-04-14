@@ -8,6 +8,7 @@ require_relative 'shifter/channels'
 require 'debug'
 require 'rspotify'
 
+# SongShifter base module
 module Shifter
   class << self
     def env
@@ -24,10 +25,12 @@ module Shifter
   end
 end
 
-puts Shifter.env
-puts Shifter::Spotify::COMPANY
-
 # authenticate for user erimicel via API
 spotify = Shifter::Spotify.new(user: 'erimicel')
-# puts spotify.playlist(id: '6vlWxLitVim5pvBzI7oZp6').export
-# puts AppleMusic::Artist.search('Men I Trust').first
+
+# Export playlist to CSV and download thumbnail image
+spotify.playlist(id: '6vlWxLitVim5pvBzI7oZp6').export
+
+# TODO: add examples
+# TODO: add user prompt for playlist ID or action
+# TODO: add apple music fetcher
